@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrapfiles/css/bootstrap.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="owl-carousel/css/owl.carousel.css">
+    <link rel="stylesheet" href="owl-carousel/css/owl.theme.default.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <script src="bootstrapfiles/js/jquery.min.js "></script>
+    <script src="owl-carousel/js/owl.carousel.js"></script>
+    <style>
+        @font-face {
+            font-family: openSansBold;
+            src: url(fonts/OpenSans-Bold-webfont.eot), url(fonts/OpenSans-Bold-webfont.woff);
+        }
+        
+        @font-face {
+            font-family: openSansRegular;
+            src: url(fonts/OpenSans-Regular-webfont.eot), url(fonts/OpenSans-Regular-webfont.woff);
+        }
+        /* overidding values */
+        
+        .navbar-brand {
+            font-size: 2.25rem;
+        }
+        
+        .navbar-toggler {
+            background-color: white;
+        }
+        
+        .dropdown-item {
+            display: block;
+            width: 100%;
+            padding: 0.25rem 1.5rem;
+            clear: both;
+            font-weight: 400;
+            color: #212529;
+            text-align: inherit;
+            white-space: nowrap;
+            background-color: transparent !important;
+            border: 0;
+        }
+        
+        .dropdown-item:hover {
+            background: rgb(243, 156, 18, 0.8) !important;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            display: none;
+            float: left;
+            min-width: 10rem;
+            padding: 0.5rem 0;
+            margin: 0.125rem 0 0;
+            font-size: 1rem;
+            color: #212529;
+            text-align: left;
+            list-style: none;
+            background-color: rgba(255, 255, 255, 0.5);
+            background-clip: padding-box;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 0.25rem;
+            transition: all 5s;
+        }
+        /* mycss */
+        
+        .read-more {
+            display: none;
+        }
+        
+        .read-more:hover {
+            display: block;
+        }
+        
+        .links li {
+            display: inline-block;
+            padding: 5px 8px;
+        }
+        
+        .links li a {
+            color: white;
+            font-family: openSansRegular;
+        }
+        
+        .navbar-cards {
+            animation-name: cardsFade;
+            animation-duration: 2s;
+            animation-delay: 0.5s;
+            animation-timing-function: linear;
+        }
+        
+        @keyframes cardsFade {
+            0% {
+                opacity: 0%;
+            }
+            50% {
+                opacity: 50%;
+            }
+            100% {
+                opacity: 100%;
+            }
+        }
+        
+        .bg-extra-dark-blue {
+            background: #1a2b55;
+        }
+        
+        .bg-dark-blue {
+            background: #1a2b63;
+        }
+        
+        .bg-tomato {
+            background: tomato;
+        }
+        
+        .admin-icon::before {
+            content: "\f007";
+            font-family: fontAwesome;
+            padding: 0 5px 0 10px;
+        }
+        
+        .finance-icon::before {
+            content: "\f07c";
+            font-family: fontAwesome;
+            padding: 0 5px 0 10px;
+        }
+        
+        .btn-submit {
+            background: #1a2b63;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 9px 76px;
+            text-decoration: none;
+        }
+        
+        .btn-submit:hover {
+            background: #172a69;
+            color: white;
+        }
+        
+        .btn-submit:active {
+            position: relative;
+            top: 1px;
+        }
+        
+        .we-are-the-best-bg {
+            background: url("images/we-are-the-best-bg.jpg");
+            background-size: cover;
+        }
+        
+        .social-icons li i {
+            transition: all 0.2s;
+        }
+        
+        .social-icons li i:hover {
+            font-size: 20px;
+        }
+        
+        .text-tomato {
+            color: tomato;
+        }
+        
+        .btn-orange {
+            background: tomato;
+            border-radius: 28px;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 17px;
+            padding: 16px 31px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #2f6627;
+        }
+        
+        .btn-orange:hover {
+            background: #1a2b63;
+            color: white;
+        }
+        
+        .btn-orange:active {
+            position: relative;
+            top: 1px;
+        }
+        
+        .btn-blue {
+            background: #1a2b63;
+            border-radius: 28px;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 17px;
+            padding: 13px 35px;
+            text-decoration: none;
+            text-shadow: none;
+        }
+        
+        .btn-blue:hover {
+            background: tomato;
+            color: white;
+        }
+        
+        .btn-tomato {
+            color: tomato;
+            background: white;
+        }
+        
+        .btn-tomato:hover {
+            color: tomato;
+            background: white;
+        }
+        
+        .navbar-cards {
+            background: rgba(25, 42, 86, 0.8);
+            height: 150px;
+            transform: scale(1, 1);
+            transition: transform 1s;
+        }
+        
+        .navbar-cards:hover {
+            background: rgb(243, 156, 18, 0.8);
+            color: white;
+            transform: scale(1.1, 1.1);
+        }
+        
+        .best-finance-icon::before {
+            display: block;
+            content: "\f201";
+            font-family: fontawesome;
+            color: white;
+            font-size: 50px;
+        }
+        
+        .authorised-finance-icon::before {
+            display: block;
+            content: "\f0a3";
+            font-family: fontawesome;
+            color: white;
+            font-size: 50px;
+        }
+        
+        .comprehensive-icon::before {
+            display: block;
+            content: "\f1ea";
+            font-family: fontawesome;
+            color: white;
+            font-size: 50px;
+        }
+        
+        .moniter-icon::before {
+            display: block;
+            content: "\f26c";
+            font-family: fontawesome;
+            color: white;
+            font-size: 50px;
+        }
+        
+        .tax-icon {
+            display: block;
+            color: white;
+            font-size: 50px;
+            padding: 10xpx;
+        }
+        
+        *:focus {
+            outline: 0 !important;
+        }
+        
+        .dropdown-arrow::after {
+            content: "\f107";
+            font-family: fontAwesome;
+            padding: 0 5px;
+        }
+        
+        .openSansBold {
+            font-family: openSansBold;
+        }
+        
+        .openSansRegular {
+            font-family: openSansRegular;
+        }
+        
+        .text-white {
+            color: white !important;
+        }
+        
+        .text-white:hover {
+            color: white !important;
+            display: inline-block;
+            background: rgba(243, 156, 18, 0.5);
+            padding: 5px;
+        }
+        
+        #navbar-bg {
+            background: url("images/navbar-background.jpg") 0 0 no-repeat;
+            background-size: cover;
+            font-family: openSansRegular;
+        }
+        
+        .email::before {
+            content: "\f0e0";
+            color: #f39c12;
+            font-family: 'fontawesome';
+            padding: 5px;
+        }
+        
+        .address {
+            color: #f39c12;
+            padding: 5px;
+        }
+        
+        .social-icons {
+            margin: 0 0 0 0;
+            text-align: right;
+        }
+        
+        .social-icons li {
+            display: inline-block;
+            padding: 0px 10px;
+        }
+        
+        .social-icons li a i {
+            color: white;
+        }
+        
+        .estate-planning-transition,
+        .retirement-plan-transition,
+        .tax-planning-transition {
+            transition: all 0.5s;
+            transition-timing-function: linear;
+        }
+        
+        .estate-planning-transition:hover,
+        .retirement-plan-transition:hover,
+        .tax-planning-transition:hover {
+            transform: scale(1.05);
+            opacity: 90%;
+        }
+        
+        @media only screen and (max-width:446px) {
+            .btn-submit {
+                font-size: 15px;
+                padding: 9px 30px;
+            }
+        }
+        
+        @media only screen and (max-width:350px) {
+            .btn-submit {
+                font-size: 8px;
+                padding: 9px 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="navbar-bg">
+            <div style="backdrop-filter: brightness(70%)">
+                <div class="container">
+                    <!-- address detail -->
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-4 col-md-3 col-sm-12">
+                            <div class="email text-light">query@finance.com</div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-5 col-sm-12">
+                            <div class="address text-light">
+                                <i class="address fas fa-map-marker-alt"></i> Durham Street Hialeah,FL 33010
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-4 col-md-4 col-sm-12">
+                            <ul class="list-unstyled social-icons">
+                                <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                                <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+                                <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div style="backdrop-filter: brightness(80%);">
+                <div class="container">
+
+                    <!-- navbar -->
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand openSansBold text-light" href="#">BLO</a>
+                        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="collapsibleNavId">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                                <li class="nav-item dropdown px-xl-3">
+                                    <a class="nav-link dropdown-arrow text-white" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                        <a class="dropdown-item" href="#">Action 1</a>
+                                        <a class="dropdown-item" href="#">Action 2</a>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item dropdown px-xl-3">
+                                    <a class="nav-link dropdown-arrow text-white" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                        <a class="dropdown-item" href="#">Contact</a>
+                                        <a class="dropdown-item" href="#">About</a>
+                                        <a class="dropdown-item" href="#">Mission</a>
+                                        <a class="dropdown-item" href="#">Career</a>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item dropdown px-xl-3">
+                                    <a class="nav-link dropdown-arrow text-white" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                        <a class="dropdown-item" href="#">Blog</a>
+                                        <a class="dropdown-item" href="#">Single Blog</a>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item dropdown px-xl-3">
+                                    <a class="nav-link dropdown-arrow text-white" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                        <a class="dropdown-item" href="#">Shop</a>
+                                        <a class="dropdown-item" href="#">Single Product</a>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item dropdown px-xl-3">
+                                    <a class="nav-link dropdown-arrow text-white" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Elements</a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                        <a class="dropdown-item" href="#">Action 1</a>
+                                        <a class="dropdown-item" href="#">Action 2</a>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                            </form>
+
+
+
+                        </div>
+                    </nav>
+
+
+
+                    <div class="row">
+                        <div class="col-xl-12 text-light mt-xl-5 ml-xl-4">
+                            <div class="openSansRegular">WE ARE HERE FOR</div>
+                            <h1 class="openSansBold">Giving Future to your Investment</h1>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-3">
+                            <a href="#" class="text-decoration-none">
+                                <div class="card navbar-cards">
+                                    <div class="card-body text-light">
+                                        <h5 class="card-title openSansBold best-finance-icon">Best Financial Advice</h5>
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-3">
+                            <a href="#" class="text-decoration-none">
+                                <div class="card navbar-cards">
+                                    <div class=" card-body text-light">
+                                        <h5 class="card-title openSansBold authorised-finance-icon ">Authorised Finance Brand
+                                        </h5>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-3">
+                            <a href="#" class="text-decoration-none">
+                                <div class="card navbar-cards">
+                                    <div class="card-body text-light ">
+                                        <h5 class="card-title openSansBold comprehensive-icon ">Comprehensive Advices</h5>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-3">
+                            <a href="#" class="text-decoration-none">
+                                <div class="card navbar-cards">
+                                    <div class="card-body text-light ">
+                                        <h5 class="card-title openSansBold moniter-icon">Monitoring & Review</h5>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-4 col-md-6 mb-3">
+                            <a href="#" class="text-decoration-none">
+                                <div class="card navbar-cards">
+                                    <div class=" card-body text-light">
+                                        <i class="fas fa-hand-holding-usd tax-icon"></i>
+                                        <h5 class="card-title openSansBold ">
+                                            The Tax Advantages</h5>
+
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container mt-5">
+            <!-- Explore solutions -->
+            <div class="row justify-content-lg-start justify-content-md-center">
+                <div class="col-xl-3 col-lg-3 col-md-12 d-flex">
+                    <h4 class="openSansBold my-auto mt-3">Explore Solutions</h4>
+                </div>
+
+                <div class="col-xl-6 col-lg-5 col-md-12 mt-3">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint ipsam qui exercitationem, ipsa dolorum error sit unde odio assumenda rerum eius dolores neque in ipsum aspernatur doloremque tempora nisi? Labore!
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-md-12 d-flex mt-3">
+                    <a href="" class="btn btn-orange openSansBold my-auto mx-lg-1 mx-sm-auto mt-md-3">VIEW ALL
+                        SERVICES</a>
+                </div>
+            </div>
+
+            <!-- estate planning, retirement plan, tax planning -->
+
+            <div class="row">
+                <!-- estate planning -->
+                <div class="col-lg-4 col-md-6 mt-5">
+                    <a href="" class="text-decoration-none text-dark">
+                        <div class="card">
+                            <img class="card-img-top estate-planning-transition" src="images/estate-planning.jpg" alt="">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Estate Planning</h4>
+
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                <!-- retirement plan -->
+                <div class="col-lg-4 col-md-6 mt-5">
+
+                    <a href="" class="text-decoration-none text-dark">
+                        <div class="card">
+                            <img class="card-img-top retirement-plan-transition" src="images/retirement-plan.jpg" alt="retirement-plan">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Retirement Plan</h4>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- tax planning -->
+                <div class="col-lg-4 col-md-6 mt-5">
+                    <a href="" class="text-decoration-none text-dark">
+                        <div class="card">
+                            <img class="card-img-top tax-planning-transition" src="images/tax-planning.jpg" alt="tax-planning">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Tax Planning</h4>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- about us -->
+            <div class="row mt-md-5">
+                <div class="col-xl-4 col-lg-6 col-md-12 d-md-flex align-self-start">
+                    <img src="images/about_img.png" alt="about-us" class="img-fluid mx-md-auto">
+                </div>
+
+                <div class="col-xl-8 col-lg-6 col-md-12 mt-lg-0">
+                    <div class="row mt-md-5 mt-3 mt-lg-0">
+                        <div class="col-12">
+                            <div class="text-danger openSansBold">About US</div>
+                        </div>
+
+                        <div class="col-12">
+                            <h4 class="openSansBold">The Largest Business Expert!</h4>
+                        </div>
+
+                        <div class="col-12">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis fugit illum excepturi vel qui odio veritatis temporibus voluptatibus, ducimus odit debitis praesentium modi blanditiis culpa iste, ipsa tenetur. Praesentium, repellat
+                                odit!
+                            </p>
+                        </div>
+
+                        <div class="col-xl-1 ml-0"><img src="images/extra-benfit-through-invest.png" alt="" class="img-fluid"></div>
+                        <div class="col-xl-11">
+                            <h5>Extra benefit through Invest</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam fugit consectetur fuga illum harum repellendus.</p>
+                        </div>
+
+
+                        <div class="col-xl-1"><img src="images/expand-profit-and-reduct-tax.png" alt="" class="img-fluid"></div>
+                        <div class="col-xl-11">
+                            <h5>Expand profit and reduce Tax</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam fugit consectetur fuga illum harum repellendus.</p>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12 mt-3">
+                    <h6 class="text-tomato">PROFIT GRAPH</h6>
+                    <h3>BLO gives you the best Financial solution for business</h3>
+
+                    <div class="row">
+                        <div class="col-xl-2 mt-xl-2">
+                            <img src="images/security.png" alt="security-icon" class="img-fluid">
+                        </div>
+                        <div class="col-xl-10 mt-xl-2">
+                            <h5>Security</h5>
+                            <p>we offer protection when your customers have financial.</p>
+                        </div>
+
+
+                        <div class="col-xl-2 mt-2">
+                            <img src="images/flexibility.png" alt="flexibility-icon" class="img-fluid">
+                        </div>
+                        <div class="col-xl-10 mt-xl-2">
+                            <h5>Flexibility</h5>
+                            <p>Funding grows in line with your daily sales update.</p>
+                        </div>
+                        <button class="btn btn-blue mt-xl-2">CONTACT US</button>
+                    </div>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-12 mt-3">
+                    <img src="images/chart.png" alt="chart-img" class="img-fluid mt-5 d-flex mx-auto">
+
+                    <div class="mt-3 ml-md-3 text-center">
+                        <span class="font-weight-bold">Annual Report: </span> From 2013 to 20 2018 the growth rate grew +2.40%
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="we-are-the-best-bg mt-5 p-5">
+            <div class="container">
+                <div class="text-center text-light">WE ARE THE BEST</div>
+                <div class="text-center h3 text-light">BLO has been giving best consultation to top USA's Finance companies since 1985</div>
+
+
+
+
+
+                <!-- Button trigger modal -->
+                <button data-toggle="modal" class="d-flex btn btn-orange video-btn d-flex mx-auto" data-src="https://www.youtube.com/embed/Jfrjeg26Cwk" data-target="#myModal">
+                        <i class="fas fa-play-circle fa-5x"></i>
+                    </button>
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+
+                            <div class="modal-body">
+
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                <!-- 16:9 aspect ratio -->
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5 px-2">
+                    <div class="col-xl-6 col-lg-12 pt-xl-3 pt-5 bg-light">
+                        <h3>Excellence Record</h3>
+                        <p>From banking and insurance to wealth the management and securitie on distribution financial.</p>
+
+                        <div class="row">
+                            <!-- 350+ Projects Done -->
+                            <div class="col-xl-2 mt-5"><img src="images/projects-icon.png" alt="projects-done-icon" class="img-fluid"></div>
+                            <div class="col-xl-10 mt-5">
+                                <h4>350+ Projects Done</h4>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit consequatur quidem aliquid!</p>
+                            </div>
+
+
+                            <!-- 500+ Happy Clients -->
+                            <div class="col-xl-2 mt-3"><img src="images/happy-clients.png" alt="projects-done-icon" class="img-fluid"></div>
+                            <div class="col-xl-10 mt-3">
+                                <h4>500+ Happy Clients</h4>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit consequatur quidem aliquid!</p>
+                            </div>
+
+
+                            <!-- 750+ Team Experts -->
+                            <div class="col-xl-2 mt-3"><img src="images/team-expert.png" alt="projects-done-icon" class="img-fluid"></div>
+                            <div class="col-xl-10 mt-3">
+                                <h4>750+ Team Experts</h4>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit consequatur quidem aliquid!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Get Free Quote and form -->
+                    <div class="col-xl-6 col-lg-12 pt-xl-3 pt-5 bg-light">
+                        <h3>Get Free Quote</h3>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit voluptate accusamus laudantium consequatur!
+
+                        <!-- form -->
+                        <form action="" method="post" class="py-5">
+
+                            <!-- name -->
+                            <div class="form-group mt-3">
+                                <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First Name">
+                            </div>
+
+                            <!-- email -->
+                            <div class="form-group mt-3">
+                                <input type="text" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="Email">
+                            </div>
+
+
+                            <!-- phone -->
+                            <div class="form-group mt-3">
+                                <input type="text" class="form-control" name="phone" id="phone" aria-describedby="helpId" placeholder="Phone">
+                            </div>
+
+                            <!-- subject -->
+                            <div class="form-group mt-3">
+                                <input type="text" class="form-control" name="subject" id="subject" aria-describedby="helpId" placeholder="Subject">
+                            </div>
+
+                            <button type="submit" class="btn btn-submit d-flex mx-auto flex-wrap">SUBMIT NOW</button>
+                        </form>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+        <div class="container mt-5">
+            <!-- workers profile -->
+            <div class="slider">
+                <div class="owl-carousel owl-theme">
+                    <!-- Mark Stive -->
+                    <div>
+                        <div class="card">
+
+                            <div class="card-body">
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, commodi nesciunt. Itaque explicabo perspiciatis dolor ex rerum.</p>
+
+
+                                <div class="row justify-content-center">
+                                    <div class="col-xl-12">
+                                        <div class="row">
+                                            <div class="col-xl-12">
+                                                <img src="images/employers/mark-stive.jpg" alt="" style="width: 75px !important; height: 75px !important;" class="rounded-circle mx-auto">
+
+                                                <h4 class="card-title text-center">Mark Stive</h4>
+                                                <p class="text-muted text-center">CEO AT DRON</p>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <!-- July robast -->
+                    <div>
+                        <div class="card">
+
+                            <div class="card-body">
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, commodi nesciunt. Itaque explicabo perspiciatis dolor ex rerum.</p>
+
+
+                                <div class="row justify-content-center">
+                                    <div class="col-xl-12">
+                                        <div class="row">
+                                            <div class="col-xl-12">
+                                                <img src="images/employers/july-robast.png" alt="july-robast" style="width: 75px !important; height: 75px !important;" class="rounded-circle mx-auto">
+
+                                                <h4 class="card-title text-center">July Robast</h4>
+                                                <p class="text-muted text-center">CEO AT DRON</p>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+                    <!-- Robart Marts -->
+                    <div>
+                        <div class="card">
+
+                            <div class="card-body">
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, commodi nesciunt. Itaque explicabo perspiciatis dolor ex rerum.</p>
+
+
+                                <div class="row justify-content-center">
+                                    <div class="col-xl-12">
+                                        <div class="row">
+                                            <div class="col-xl-12">
+                                                <img src="images/employers/robart-marts.png" alt="july-robast" style="width: 75px !important; height: 75px !important;" class="rounded-circle mx-auto">
+
+                                                <h4 class="card-title text-center">Robart Marts</h4>
+                                                <p class="text-muted text-center">CEO AT DORN</p>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!-- explore solutions -->
+            <div class="row mt-5">
+                <div class="col-xl-12">
+                    <!-- title -->
+                    <div class="text-center">
+                        <div class="text-tomato">WE ARE HERE FOR</div>
+                        <h4>Explore Solutions</h4>
+                    </div>
+                </div>
+                <!-- images -->
+                <div class="col-xl-12 mt-5">
+                    <div class="row">
+                        <!-- image 1 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card">
+                                <a href="" class="text-decoration-none text-dark">
+                                    <img class="card-img-top" src="images/news_1.jpg" alt="">
+                                    <div class="text-muted openSansRegular pt-3"><span class="admin-icon">Admin</span> <span class="finance-icon">Finance</span></div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Special benefit through Invest by your money</h5>
+
+                                        <a href="" class="card-text text-decoration-none btn-outline-dark p-2">KNOW MORE <i class="fas fa-long-arrow-alt-right ml-3"></i></a>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <!-- image 2 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card">
+                                <a href="" class="text-decoration-none text-dark">
+                                    <img class="card-img-top" src="images/news-2.jpg" alt="">
+                                    <div class="text-muted openSansRegular pt-3"><span class="admin-icon">Admin</span> <span class="finance-icon">Finance</span></div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Extra benefit through Invest by your money</h5>
+                                </a>
+                                <a href="" class="card-text text-decoration-none btn-outline-dark p-2">KNOW MORE <i class="fas fa-long-arrow-alt-right ml-3"></i>
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- image 3 -->
+                        <div class="col-xl-4 col-lg-4 col-md-6">
+                            <div class="card">
+                                <a href="" class="text-decoration-none text-dark">
+                                    <img class="card-img-top" src="images/news-3.jpg" alt="">
+                                    <div class="text-muted openSansRegular pt-3"><span class="admin-icon">Admin</span> <span class="finance-icon">Finance</span></div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Benefit through Invest by your money</h4>
+                                </a>
+
+                                <a href="" class="card-text text-decoration-none btn-outline-dark p-2">KNOW MORE <i class="fas fa-long-arrow-alt-right ml-3"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer bg-dark-blue">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-12">
+                        <h1 class="text-light mb-0">BLO</h1>
+                        <small class="text-light">Finance Company</small>
+                    </div>
+
+                    <div class="col-xl-10 col-lg-9 col-md-8 col-sm-12 my-auto">
+                        <div class="row">
+                            <div class="col-xl-8 col-lg-7 col-md-12 col-sm-12 mt-md-0 mt-sm-5">
+                                <h2 class="text-light text-center">Work with best Finance Team</h2>
+                            </div>
+                            <div class="col-xl-4 col-lg-5 col-md-12 col-sm-12 mt-lg-2">
+                                <a name="" id="" class="btn btn-light d-lg-inline-block d-block mx-auto" href="#" role="button">WORK WITH US</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- About Company -->
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mt-md-3 mt-5">
+                        <h5 class="text-light">About Company</h5>
+
+                        <!-- location -->
+                        <div class="row">
+                            <div class="col-xl-1 col-lg-2 col-md-2 col-sm-1 col-1"><i class="fas fa-map-marker-alt text-light"></i></div>
+                            <div class="col-xl-11 col-lg-10 col-md-10 col-sm-11 col-11">
+                                <div class="location text-light"> 1234 Mania Avenue . Brisbon Street NY 99123. United States</div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- phone number -->
+
+                        <div class="row mt-2">
+                            <div class="col-xl-1 col-lg-2 col-md-2 col-sm-1 col-1">
+                                <i class="far fa-phone-alt text-light"></i>
+                            </div>
+                            <div class="col-xl-11 col-lg-10 col-md-10 col-sm-11 col-11">
+                                <div class="phone-number text-light mt-2">Phone:(305) 720-8500</div>
+                            </div>
+                        </div>
+
+
+                        <!-- email -->
+                        <div class="row mt-2">
+                            <div class="col-xl-1 col-lg-2 col-md-2 col-sm-1 col-1"><i class="far fa-envelope text-light"></i></div>
+                            <div class="col-xl-11 col-lg-10 col-md-10 col-sm-11 col-11">
+                                <div class="email-address text-light">Email: contact@abcd.com</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Useful Links -->
+                    <div class="col-xl-4 col-lg-4 col-md-6 mt-md-3 mt-5">
+                        <h5 class="text-light">Useful Links</h5>
+                        <ul class="text-light">
+                            <li class="my-2"><a href="" class="text-light text-decoration-none">About Company</a></li>
+                            <li class="my-2"><a href="" class="text-light text-decoration-none">Our People</a></li>
+                            <li class="my-2"><a href="" class="text-light text-decoration-none">Latest Media</a></li>
+                            <li class="my-2"><a href="" class="text-light text-decoration-none">Our Branches</a></li>
+                            <li class="my-2"><a href="" class="text-light text-decoration-none">Case Studies</a></li>
+
+                        </ul>
+                    </div>
+
+                    <!-- Subscribe Newsletter -->
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 mt-md-3 mt-5">
+                        <h5 class="text-light">Subscribe Newsletter</h5>
+
+                        <div class="input-group">
+
+                            <input type="text" class="form-control bg-dark-blue" name="" id="" aria-describedby="helpId" placeholder="Enter your email">
+                            <div class="input-group-append">
+                                <button class="input-group-text bg-tomato"><i class="far fa-paper-plane text-light"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="text-light mt-3 mb-5">Sign up for our latest news & articles. We won't give you spam mails.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bg-extra-dark-blue footer">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-7 col-lg-6 col-md-5 col-sm-12 text-light d-md-block d-flex justify-content-center">&copy; 2021 BLO All Rights Reserved</div>
+                    <div class="col-xl-5 col-lg-6 col-md-7 col-sm-12 d-md-block d-flex justify-content-center">
+                        <ul class="list-unstyled links my-auto">
+                            <li> <a href="">FACEBOOK</a></li>
+                            <li><a href="">TWITTER</a></li>
+                            <li><a href="">INSTAGRAN</a></li>
+                            <li><a href="">YOUTUBE</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- bootstrap  and jQuery files -->
+    <script>
+        $(document).ready(function() {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                // nav: true,
+                margin: 20,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                singleItem: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+
+                    600: {
+                        items: 1
+                    },
+
+                    800: {
+                        items: 2
+                    }
+
+                }
+
+            });
+        });
+    </script>
+
+    <script src="bootstrapfiles/js/popper.min.js "></script>
+    <script src="bootstrapfiles/js/bootstrap.min.js "></script>
+    <script src="modal.js"></script>
+</body>
+
+</html>
